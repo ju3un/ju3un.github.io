@@ -14,7 +14,7 @@ let config = {
 
   // addtional
   googleAnalyticsTrackingId: 'UA-103592668-4',
-  disqusShortname: 'dev-juvorites-blog',
+  disqusShortname: 'dev-ju3un-blog',
 };
 
 /********************************************** */
