@@ -1,8 +1,8 @@
 {
-  "name": "junhobaik-personal-web",
-  "description": "Junho Baik's devLog, Front-End Development",
+  "name": "ju3un-personal-web",
+  "description": "Ju3un's devLog, Development",
   "version": "1.0.0",
-  "author": "Junho Baik <junhobaik@gmail.com>",
+  "author": "Ju3un <Ju33un@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.6",
     "@fortawesome/free-regular-svg-icons": "^5.4.1",
