@@ -4,9 +4,6 @@ const googleFont = [
   {
     name: 'Nanum Gothic',
     bold: [400, 700],
-  },
-  {
-    name: 'Noto Sans KR'
   }
 ];
 
@@ -14,7 +11,7 @@ const typography = new Typography({
   baseFontSize: '16px',
   baseLineHeight: 1.666,
   headerFontFamily: ['Nanum Gothic'],
-  bodyFontFamily: ['Noto Sans KR'],
+  bodyFontFamily: ['Nanum Gothic'],
 });
 
 const googleFontString = googleFont
