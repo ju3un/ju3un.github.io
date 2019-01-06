@@ -8,6 +8,7 @@ keywords:
   - github
   - repository
   - github 커밋
+  - github Repository 생성
 attachments:
 ---
 
@@ -56,9 +57,9 @@ $ git remote set-url origin [재설정할 REPOSITORY 주소]
 $ git status
 ```
 
-Untracked files: 목록의 초록색 파일명은 commit에 포함되는 파일입니다.
+Untracked files: 목록의 초록색 파일명은 commit에 포함되는 파일이다.
 
-반대로 빨간색 파일명은 commit에 포함되지 않은 파일입니다. 
+반대로 빨간색 파일명은 commit에 포함되지 않은 파일이다. 
 
 ##4. 파일 커밋(Commit)에 포함 시키기
 
@@ -67,7 +68,7 @@ $ git add .
 $ git add example.txt
 ```
 
-위의 명령어처럼 전체 파일을 포함시키거나 특정 파일만 포함시킬 수 있습니다.
+위의 명령어처럼 전체 파일을 포함시키거나 특정 파일만 포함시킬 수 있다.
 
 ##5. 커밋(Commit)하기
 
@@ -75,7 +76,7 @@ $ git add example.txt
 $ git commit -m "[MESSAGE]"
 ```
 
--m은 메세지를 적겠다는 옵션을 나타냅니다.
+-m은 메세지를 적겠다는 옵션을 나타낸다.
 
 ##6. 푸쉬(Push)하기 
 
@@ -83,13 +84,13 @@ $ git commit -m "[MESSAGE]"
 $ git push origin master
 ```
 
-최종적으로 Commit 해두었던 파일들을 원격 저장소에 올리기 위함입니다.
+최종적으로 Commit 해두었던 파일들을 원격 저장소에 올리기 위함이다.
 
-여기서 origin은 현재 base branch인 곳을 가르키는 걸로 알고 있습니다.
+여기서 origin은 현재 base branch인 곳을 가르키는 걸로 알고 있다.
 
-master은 master branch를 일컫습니다. 
+master은 master branch를 일컫는데 만약 다른 branch에 올리고 싶다면 master을 branch명으로 변경해주면 된다.
 
-만약 다른 branch에 올리고 싶다면 master을 branch명으로 변경해주면 되는데, 이 부분은 따로 branch에 관해 포스팅 올리겠습니다.
+branch 관련 명령어는 따로 포스팅 올릴 예정이다.
 
 
 
