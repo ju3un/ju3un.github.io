@@ -16,7 +16,7 @@ attachments:
 
 먼저 Github 사이트에서 Repository를 생성한다.
 
- ![](./src/images/post-images/post-2019-01-06-1.png)
+ ![](https://user-images.githubusercontent.com/41428527/50735685-198feb00-11f6-11e9-8bde-fee4fe1b2477.png)
 
 
 ##2. Repository 원격 저장소 연결
