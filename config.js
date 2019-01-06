@@ -13,15 +13,15 @@ let config = {
   bioShow: true,
 
   // addtional
-  googleAnalyticsTrackingId: 'UA-103592668-4',
-  disqusShortname: 'dev-ju3un-blog',
+  googleAnalyticsTrackingId: 'UA-131751338-1',
+  disqusShortname: 'ju3un',
 };
 
 /********************************************** */
 
 if (process.env.NODE_ENV === 'development') {
-  config.googleAnalyticsTrackingId = '';
-  config.disqusShortname = '';
+  config.googleAnalyticsTrackingId = 'UA-131751338-1';
+  config.disqusShortname = 'ju3un';
 }
 
 module.exports = config;
