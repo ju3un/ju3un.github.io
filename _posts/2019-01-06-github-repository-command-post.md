@@ -19,3 +19,77 @@ attachments:
 
 
 ##2. Repository 원격 저장소 연결
+
+>터미널 실행 후 자신의 프로젝트 디렉터리 위치로 이동한다.
+
+```shell
+$ cd [DIRECTORY]
+```
+
+>새로운 git 저장소를 초기화 한다.
+
+```shell
+$ git init
+```
+
+> 현재 로컬 경로를 원격 저장소로 연결한다.
+
+```shell
+$ git remote add origin [REPOSITORY 주소]
+```
+
+###2-1. 현재 로컬 경로의 원격 저장소 주소 확인 
+
+```shell
+$ git remote -v
+```
+
+###2-2. 현재 로컬 경로의 원격 저장소 연결 재설정 
+
+```shell
+$ git remote set-url origin [재설정할 REPOSITORY 주소]
+```
+
+##3. 현재 로컬 경로의 파일 상태 확인 
+
+```shell
+$ git status
+```
+
+Untracked files: 목록의 초록색 파일명은 commit에 포함되는 파일입니다.
+
+반대로 빨간색 파일명은 commit에 포함되지 않은 파일입니다. 
+
+##4. 파일 커밋(Commit)에 포함 시키기
+
+```shell
+$ git add .
+$ git add example.txt
+```
+
+위의 명령어처럼 전체 파일을 포함시키거나 특정 파일만 포함시킬 수 있습니다.
+
+##5. 커밋(Commit)하기
+
+```shell
+$ git commit -m "[MESSAGE]"
+```
+
+-m은 메세지를 적겠다는 옵션을 나타냅니다.
+
+##6. 푸쉬(Push)하기 
+
+```shell
+$ git push origin master
+```
+
+최종적으로 Commit 해두었던 파일들을 원격 저장소에 올리기 위함입니다.
+
+여기서 origin은 현재 base branch인 곳을 가르키는 걸로 알고 있습니다.
+
+master은 master branch를 일컫습니다. 
+
+만약 다른 branch에 올리고 싶다면 master을 branch명으로 변경해주면 되는데, 이 부분은 따로 branch에 관해 포스팅 올리겠습니다.
+
+
+
