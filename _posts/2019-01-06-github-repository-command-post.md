@@ -51,6 +51,12 @@ $ git remote -v
 $ git remote set-url origin [재설정할 REPOSITORY 주소]
 ```
 
+###2-3. 현재 로컬 경로의 원격 저장소 연결 삭제
+
+```shell
+$ git remote remove origin
+```
+
 ##3. 현재 로컬 경로의 파일 상태 확인 
 
 ```shell
