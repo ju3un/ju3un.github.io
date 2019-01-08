@@ -60,10 +60,19 @@ const Layout = ({ children, data, location }) => (
               { name: 'og:description', content: config.description },
               { name: 'og:image', content: config.titleLogo() },
               { name: 'og:url', content: siteUrl },
+              { property: 'al:ios:url', content: 'applinks://docs'},
+              { property: 'al:ios:app_store_id', content: '12345'},
+              { property: 'al:ios:app_name', content: 'App Links'},
+              { property: 'al:android:url', content: 'applinks://docs'},
+              { property: 'al:android:app_name', content: 'aApp Links'},
+              { property: 'al:android:package', content: 'org.applinks'},
+              { property: 'al:web:url', content: 'http://applinks.org/documentation'},
             ]}
           > 
             {/* html lang set */}
             <html lang="ko" />
+            {/* URL */}
+            <link rel="canonical" href={siteUrl}/>
             {/* load google font */}
             <link
               href={`https://fonts.googleapis.com/css?family=${googleFontString}`}
