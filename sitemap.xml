@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://ju3un.github.io/c++-new-excepiton-post/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/github-branch-command-post/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://ju3un.github.io/github-repository-command-post/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/windows10-msi-administrator-post/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ju3un.github.io/github-repository-command-post/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/2018Memoir-post/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/tags/c/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -11,10 +11,10 @@
 <url> <loc>https://ju3un.github.io/tags/new/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/tags/github/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/tags/branch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://ju3un.github.io/tags/repository/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/tags/windows-10/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/tags/msi/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/tags/administrator/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://ju3un.github.io/tags/repository/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/tags/memoir/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/tags/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://ju3un.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
