@@ -61,7 +61,12 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-plugin-robots-txt',
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: ["/tags/*", `/tags`, `/search`],
+      }
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
