@@ -9,7 +9,6 @@ keywords:
   - repository
   - github 커밋
   - github Repository 생성
-attachments:
 ---
 
 ##1. Repository(저장소) 생성
@@ -90,7 +89,7 @@ $ git commit -m "[MESSAGE]"
 $ git push origin master
 ```
 
-최종적으로 Commit 해두었던 파일들을 원격 저장소에 올리기 위함이다.
+최종적으로 Commit 해두었던 파일들을 원격 저장소에 올리기 위함이다.
 
 여기서 origin은 현재 base branch인 곳을 가르키는 걸로 알고 있다.
 

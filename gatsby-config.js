@@ -79,5 +79,8 @@ module.exports = {
         trackingId: config.googleAnalyticsTrackingId,
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`
+    }
   ],
 };
