@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 09 Jan 2019 14:06:53 GMT</lastBuildDate><item><title><![CDATA[Base64 Encoding]]></title><description><![CDATA[Base64 Encoding Base64 Encoding: 바이너리(Binary) 데이터를 -> 아스키(Ascii) 문자열로 표현하는 인코딩 방식의 하나이다. 영문 대문자(A~Z) 26개 + 영문 소문자(a~z) 26개 + 숫자(0~9) 1…]]></description><link>https://ju3un.github.io/base64-encoding/</link><guid isPermaLink="false">https://ju3un.github.io/base64-encoding/</guid><pubDate>Tue, 08 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Base64 Encoding&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 09 Jan 2019 14:09:33 GMT</lastBuildDate><item><title><![CDATA[Base64 Encoding]]></title><description><![CDATA[Base64 Encoding Base64 Encoding: 바이너리(Binary) 데이터를 -> 아스키(Ascii) 문자열로 표현하는 인코딩 방식의 하나이다. 영문 대문자(A~Z) 26개 + 영문 소문자(a~z) 26개 + 숫자(0~9) 1…]]></description><link>https://ju3un.github.io/base64-encoding/</link><guid isPermaLink="false">https://ju3un.github.io/base64-encoding/</guid><pubDate>Tue, 08 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Base64 Encoding&lt;/h2&gt;
 &lt;h3&gt;Base64 Encoding: 바이너리(Binary) 데이터를 -&gt; 아스키(Ascii) 문자열로 표현하는 인코딩 방식의 하나이다.&lt;/h3&gt;
 &lt;p&gt;영문 대문자(A~Z) 26개 + 영문 소문자(a~z) 26개 + 숫자(0~9) 10개 = 62개 값&lt;br&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -26,7 +26,7 @@
 &lt;p&gt;그러나 new 연산자를 통한 메모리 할당이 실패할 경우는 예외가 발생하여 &lt;strong&gt;프로그램이 즉시 종료&lt;/strong&gt;된다.&lt;br&gt;
 따라서 위의 널 포인터 체크하는 예외 처리가 메모리 할당 실패할 경우 예외 처리에 전혀 도움을 주지 못한다.&lt;br&gt;
 널 포인터 체크하기도 전에 프로그램이 종료될테니까...&lt;br&gt;
-&lt;strong&gt;즉, 널 포인터 체크로는 new 연산자에 대한 예외처리를 할 수 없다.&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
+&lt;strong&gt;즉, 널 포인터 체크로는 new 연산자에 대한 예외처리를 할 수 없다.&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h3&gt;그렇다면 프로그램이 종료되는 것을 방지하기 위해 올바른 예외처리를 해야 한다!&lt;/h3&gt;
