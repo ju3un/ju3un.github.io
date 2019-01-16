@@ -55,18 +55,19 @@ const Layout = ({ children, data, location }) => (
             title={data.site.siteMetadata.title}
             meta={[
               { name: 'description', content: config.description },
-              { name: 'og:type', content: 'website' },
+              { name: 'og:type', content: 'blog' },
               { name: 'og:title', content: config.title },
               { name: 'og:description', content: config.description },
               { name: 'og:image', content: config.titleLogo() },
               { name: 'og:url', content: siteUrl },
-              { property: 'al:ios:url', content: 'applinks://docs'},
-              { property: 'al:ios:app_store_id', content: '12345'},
-              { property: 'al:ios:app_name', content: 'App Links'},
-              { property: 'al:android:url', content: 'applinks://docs'},
-              { property: 'al:android:app_name', content: 'aApp Links'},
-              { property: 'al:android:package', content: 'org.applinks'},
-              { property: 'al:web:url', content: 'http://applinks.org/documentation'},
+              { name: 'og:site_name', content: config.title},
+              { property: 'al:ios:url', content: siteUrl},
+              { property: 'al:ios:app_store_id', content: ''},
+              { property: 'al:ios:app_name', content: config.title},
+              { property: 'al:android:url', content: siteUrl},
+              { property: 'al:android:app_name', content: config.title},
+              { property: 'al:android:package', content: ''},
+              { property: 'al:web:url', content: siteUrl},
             ]}
           > 
             {/* html lang set */}
@@ -93,6 +94,14 @@ const Layout = ({ children, data, location }) => (
                 gtag('config', '${config.googleAnalyticsTrackingId}');
               `}
             </script>
+            <script
+                context={`http://schema.org`}
+                type="Person"
+                name="JUVORITES"
+                url= {`https://ju3un.github.io`}
+                sameAs= {
+                  'https://www.instagram.com/ju3un'}
+            />
           </Helmet>
 
           <div id="wrap">

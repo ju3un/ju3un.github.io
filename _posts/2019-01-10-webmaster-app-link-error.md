@@ -4,7 +4,7 @@ date: 2019-01-10 23:20:00
 tags:
   - app link
   - webmaster
-  - app link error
+  - error
   - SEO
 keywords:
   - app link
