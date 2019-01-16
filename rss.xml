@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 16 Jan 2019 17:02:41 GMT</lastBuildDate><item><title><![CDATA[Blocking, Non-Blocking - I/O 모델 (1)]]></title><description><![CDATA[당분간 네트워크 관련 개념에 관한 포스팅으로 정리를 하려고 한다. 일단 네트워크 프로그래밍에서 가장 기본적인 개념에 대해 정리할 예정이다. 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 16 Jan 2019 17:20:31 GMT</lastBuildDate><item><title><![CDATA[Blocking, Non-Blocking - I/O 모델 (1)]]></title><description><![CDATA[당분간 네트워크 관련 개념에 관한 포스팅으로 정리를 하려고 한다. 일단 네트워크 프로그래밍에서 가장 기본적인 개념에 대해 정리할 예정이다. 
 이번 포스팅에서는  Blocking/Non-Blocking Model…]]></description><link>https://ju3un.github.io/network-basic-1/</link><guid isPermaLink="false">https://ju3un.github.io/network-basic-1/</guid><pubDate>Thu, 17 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h5&gt;당분간 네트워크 관련 개념에 관한 포스팅으로 정리를 하려고 한다.&lt;/h5&gt;
 &lt;p&gt;일단 네트워크 프로그래밍에서 가장 기본적인 개념에 대해 정리할 예정이다.&lt;br&gt;
 이번 포스팅에서는 &lt;strong&gt;Blocking/Non-Blocking Model&lt;/strong&gt;에 대한 개념을 정리해보자.&lt;/p&gt;
@@ -10,14 +10,14 @@
 &lt;p&gt;좀 더 쉽게 예를 들어보겠다.&lt;br&gt;
 두 대 이상의 컴퓨터끼리 서로 네트워크를 통해 통신을 한다고 가정할 때,&lt;br&gt;
 한 컴퓨터에서 출력(send)을 하고, 다른 한 컴퓨터에서 입력(read)을 받는 과정을 통해 통신을 할 수 있다.&lt;/p&gt;
-&lt;p&gt;I/O 작업은 User(유저 레벨)에서 직접 수행할 수 없고, &lt;strong&gt;실제 IO 작업을 수행하는 것은 Kernel(커널 레벨)&lt;/strong&gt;에서만 가능하다.&lt;br&gt;
+&lt;p&gt;I/O 작업은 User(유저 레벨)에서 직접 수행할 수 없고, &lt;strong&gt;실제 IO 작업을 수행하는 것은 Kernel(커널 레벨)에서만 가능하다.&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;유저 프로세스(또는 스레드)는 커널에게 요청을 하고 작업 완료 후 커널이 반환하는 결과를 기다릴 뿐이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;그렇다면 이제 시작해보자.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2&gt;2. Blocking Model&lt;/h2&gt;
 &lt;p&gt;가장 기본적인 I/O 모델로, linux에서 모든 소켓 통신은 기본 blocking으로 동작한다.&lt;br&gt;
 &lt;strong&gt;I/O 작업이 진행되는 동안 유저 프로세스는 자신의 작업을 중단한 채 대기하는 방식이다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/41428527/51262623-1070fc00-19f6-11e9-9ec5-131c90c01ecb.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/41428527/51266321-4ade9700-19fe-11e9-9b23-30bca4faccfd.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;위의 그림처럼 &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
@@ -45,7 +45,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;어떻게?&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/41428527/51262628-136bec80-19f6-11e9-890c-0caf3c4c2a2b.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/41428527/51266324-4e721e00-19fe-11e9-900a-809ff39e40c1.png&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;유저가 커널에게 (유저-&gt;커널) read작업을 요청하면&lt;/li&gt;
@@ -241,7 +241,7 @@ ex) &lt;a href=&quot;https://%EB%82%B4%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%A3%BC%EC%86
 &lt;blockquote&gt;
 &lt;p&gt;위에서 언급했듯이 필자는 자동으로 rss 파일을 생성하도록 했기 때문에, rss 파일 자체를 수정하는 것은 의미가 없다.&lt;br&gt;
 rss 파일에서의 문제가 되는 line, column을 따라가서 문제가 되는 부분을 찾은 후에 실제 소스에 적용해야 한다.&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[C++ new 동적 메모리 할당 시 bad_alloc 예외처리]]></title><description><![CDATA[C++ 개발 시 흔히 볼 수 있는 new 동적 메모리 할당 관련 코드다. 이와 같이 메모리를 할당하고 할당 여부를 체크하기 위한 널 포인터 검사를 통해 예외 처리를 한다. 근데 여기서 간과한 것이 있다. 만약 new…]]></description><link>https://ju3un.github.io/cpp-new-excepiton/</link><guid isPermaLink="false">https://ju3un.github.io/cpp-new-excepiton/</guid><pubDate>Tue, 08 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 개발 시 흔히 볼 수 있는 new 동적 메모리 할당 관련 코드다.&lt;/h3&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[C++ new 동적 메모리 할당 시 bad_alloc 예외처리]]></title><description><![CDATA[C++ 개발 시 흔히 볼 수 있는 new 동적 메모리 할당 관련 코드다. 이와 같이 메모리를 할당하고 할당 여부를 체크하기 위한 널 포인터 검사를 통해 예외 처리를 한다. 근데 여기서 간과한 것이 있다. 만약 new…]]></description><link>https://ju3un.github.io/c++-new-excepiton/</link><guid isPermaLink="false">https://ju3un.github.io/c++-new-excepiton/</guid><pubDate>Tue, 08 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;C++ 개발 시 흔히 볼 수 있는 new 동적 메모리 할당 관련 코드다.&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;
       &lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; pChar &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pChar &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;nullptr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
