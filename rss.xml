@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 18 Jan 2019 15:38:32 GMT</lastBuildDate><item><title><![CDATA[동기(Synchronous), 비동기(Asynchronous) - I/O 모델 (2)]]></title><description><![CDATA[이번 포스팅에서는 동기, 비동기에 대해 정리를 해보려고 한다. 마침 방금 전에 개인 프로젝트로 DebugView…]]></description><link>https://ju3un.github.io/network-basic-2/</link><guid isPermaLink="false">https://ju3un.github.io/network-basic-2/</guid><pubDate>Sat, 19 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h5&gt;이번 포스팅에서는 동기, 비동기에 대해 정리를 해보려고 한다.&lt;/h5&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 18 Jan 2019 16:24:52 GMT</lastBuildDate><item><title><![CDATA[동기(Synchronous), 비동기(Asynchronous) - I/O 모델 (2)]]></title><description><![CDATA[이번 포스팅에서는 동기, 비동기에 대해 정리를 해보려고 한다. 마침 방금 전에 개인 프로젝트로 DebugView…]]></description><link>https://ju3un.github.io/network-basic-2/</link><guid isPermaLink="false">https://ju3un.github.io/network-basic-2/</guid><pubDate>Sat, 19 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h5&gt;이번 포스팅에서는 동기, 비동기에 대해 정리를 해보려고 한다.&lt;/h5&gt;
 &lt;p&gt;마침 방금 전에 개인 프로젝트로 DebugView 주제가 나와서 친구랑 이야기하고 있는데&lt;br&gt;
 콜백 함수 언급으로 비동기 이야기가 나오면서 현재 상황이 블로킹, 논블로킹 주제인가 둘다 혼돈에 빠져버린..&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/41428527/51389561-0f63da00-1b70-11e9-8b2e-468cac5362e7.png&quot;&gt;&lt;/p&gt;
@@ -571,6 +571,10 @@ Page라는 것 까지 있다니...
 어찌 첫 술부터 배부르랴!&lt;/p&gt;
 &lt;p&gt;제일 속상한 건 여행할 때 중간중간 내 감정을 메모에 적어놨는데
 그 메모가 백업이 안되서 사라졌다ㅠ_ㅠ&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/41428527/51399124-860cd180-1b88-11e9-9bb4-78283fbd1800.png&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;내가 제일 사랑하는 도시, 피렌체. 피렌체는 사랑하는 사람과 함께 다시 가고 싶다!&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2&gt;2. 2018년 제일 후회되는 것: 1월 퇴사&lt;/h2&gt;
 &lt;p&gt;1월 퇴사가 있었기에 내가 제일 잘한 유럽 여행을 할 수 있었던 것도 아이러니 중 하나다.&lt;/p&gt;
 &lt;p&gt;퇴사 자체가 후회되기 보다는 시기가 조금 아쉽다.&lt;/p&gt;
@@ -590,6 +594,10 @@ Page라는 것 까지 있다니...
 &lt;p&gt;오랜만에 그림을 다시 시작했다는 것과 내가 좋아하는 것을 할 때 나는 어떤 모습인지
 많은 것을 짧은 시간안에 깨달았던, &lt;/p&gt;
 &lt;p&gt;어쩌면 작년에 세 번째로 가장 잘한 일이 아닌가 싶다! (두 번째는 따로 있다!)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/41428527/51399127-86a56800-1b88-11e9-9eac-5f21e98ba066.png&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;인테리어가 되었다! 뿌듯!&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2&gt;5. 2018년 가장 큰 변화: 내면&lt;/h2&gt;
 &lt;p&gt;솔직히 물리적으로는 이직이 가장 큰 변화라고 생각하는데
 통틀어서 가장 큰 변화는 내 내면인 것 같다.&lt;/p&gt;
