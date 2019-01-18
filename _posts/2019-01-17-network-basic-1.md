@@ -1,5 +1,5 @@
 ---
-title: Blocking, Non-Blocking - I/O 모델 (1)
+title: 블로킹(Blocking), 논블로킹(Non-Blocking) - I/O 모델 (1)
 date: 2019-01-17
 tags:
   - network
@@ -89,7 +89,7 @@ I/O 작업은 User(유저 레벨)에서 직접 수행할 수 없고, **실제 IO
 
 ### 번외,
 
->역시 Non-Blocking의 비효율성을 극복하기 위해 **I/O 이벤트 통지 모델**이 도입되었다.<br>
+>역시 Non-Blocking의 제기된 문제를 해결하기 위해 **I/O 이벤트 통지 모델**이 도입되었다.<br>
 다음에는 I/O 이벤트 통지 모델인 동기, 비동기 모델에 대해서 포스팅할 예정이다.
 
 >정리하면서 꽤나 나도 머리 속으로 다시 한번 개념을 정리한 것 같다.<br>
