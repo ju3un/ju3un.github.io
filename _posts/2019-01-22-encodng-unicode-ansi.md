@@ -1,18 +1,18 @@
 ---
-title: Encoding - ASCII, ANSI, Multi-Byte, Unicode 등 - (1)
+title: 인코딩(Encoding) - ASCII, ANSI, Multi-Byte, Unicode 등 - (1)
 date: 2019-01-22
 tags:
   - encoding
   - unicode
   - ansi
-  - utf
-  - cp949
+  - multibyte
+  - unicode
 keywords:
   - encoding
   - unicode
   - ansi
-  - utf-8
-  - cp949
+  - multibyte
+  - unicode
   - 유니코드
   - 멀티바이트
 ---
