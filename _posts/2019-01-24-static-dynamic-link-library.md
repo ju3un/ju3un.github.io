@@ -1,11 +1,15 @@
 ---
 title: 동적 링크 라이브러리(Static Link Library)와 정적 링크 라이브러리(Dynamic Link Library)
-date: 2019-01-23
+date: 2019-01-24
 tags:
+  - static link
+  - dynamic link
   - library
   - lib
   - dll
 keywords:
+  - static link
+  - dynamic link
   - library
   - lib
   - dll
