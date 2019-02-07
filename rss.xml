@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Feb 2019 14:45:18 GMT</lastBuildDate><item><title><![CDATA[C++ 전방 선언 (Forward Declaration)]]></title><description><![CDATA[전방 선언 (Forward Declaration) 식별자를 정의하기 전에 식별자의 존재를 컴파일러에게 미리 알리는 방식이다. 예를 들어보자. class A.h / class A.cpp 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Feb 2019 14:49:08 GMT</lastBuildDate><item><title><![CDATA[C++ 전방 선언 (Forward Declaration)]]></title><description><![CDATA[전방 선언 (Forward Declaration) 식별자를 정의하기 전에 식별자의 존재를 컴파일러에게 미리 알리는 방식이다. 예를 들어보자. class A.h / class A.cpp 
 class B.h / class B.cpp…]]></description><link>https://ju3un.github.io/c++-forward-declaration/</link><guid isPermaLink="false">https://ju3un.github.io/c++-forward-declaration/</guid><pubDate>Thu, 07 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;전방 선언 (Forward Declaration)&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;식별자를 정의하기 전에 식별자의 존재를 컴파일러에게 미리 알리는 방식이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;예를 들어보자.&lt;/p&gt;
@@ -48,7 +48,7 @@ C++에서는 하나의 헤더 파일이 변경되어도 include한 파일들이 
 &lt;li&gt;해당 헤더의 불필요한 정보들이 노출되지 않는다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;단, 반드시 주의해야 하는 것은 전방 선언을 사용할 경우, 그 클래스 관련 객체는 포인터형으로 선언해야 한다.&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;단, 반드시 주의해야 하는 것은 전방 선언을 사용할 경우, 그 클래스 관련 객체는 포인터형으로 선언해야 한다.&lt;/strong&gt;&lt;br&gt;
 만약, 포인터형이 아닌 객체를 생성할 경우, &lt;strong&gt;해당 객체 할당 크기를 정확히 파악할 수 없기 때문이다.&lt;/strong&gt;&lt;br&gt;
 (포인터형으로 선언시에는 4바이트(in 32bit OS)를 할당할 수 있다.)&lt;/p&gt;
 &lt;hr&gt;
