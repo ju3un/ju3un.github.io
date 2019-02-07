@@ -1,6 +1,6 @@
 ---
 title: C++ 전방 선언 (Forward Declaration)
-date: 2019-01-24
+date: 2019-02-07
 tags:
   - c++
   - class
