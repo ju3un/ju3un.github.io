@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 23 Jan 2019 15:27:08 GMT</lastBuildDate><item><title><![CDATA[동적 링크 라이브러리(Static Link Library)와 정적 링크 라이브러리(Dynamic Link Library)]]></title><description><![CDATA[C++는 기본적인 문법 사항만 규정하며, 프로그래밍에 필요한 기능들은 컴파일러에서 라이브러리 형태로 제공한다. 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Feb 2019 14:35:01 GMT</lastBuildDate><item><title><![CDATA[동적 링크 라이브러리(Static Link Library)와 정적 링크 라이브러리(Dynamic Link Library)]]></title><description><![CDATA[C++는 기본적인 문법 사항만 규정하며, 프로그래밍에 필요한 기능들은 컴파일러에서 라이브러리 형태로 제공한다. 
 예를 들어, 문자열의 길이를 알아내고자 할 때 우리는 strlen…]]></description><link>https://ju3un.github.io/static-dynamic-link-library/</link><guid isPermaLink="false">https://ju3un.github.io/static-dynamic-link-library/</guid><pubDate>Thu, 24 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;C++는 기본적인 문법 사항만 규정하며, 프로그래밍에 필요한 기능들은 컴파일러에서 라이브러리 형태로 제공한다.&lt;br&gt;
 예를 들어, 문자열의 길이를 알아내고자 할 때 우리는 strlen()이 구현된 라이브러리를 이용하여 해당 함수를 실행한다.&lt;br&gt;
 프로그램에 라이브러리를 사용한 함수를 사용한다고 가정할 때, 컴파일 된 후 링크되면,&lt;br&gt;
@@ -88,6 +88,80 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://luyin.tistory.com/201&quot;&gt;정적 라이브러리(Static library) vs 동적 라이브러리(Dynamic library)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://3dmpengines.tistory.com/1447&quot;&gt;DLL 명시적, 묵시적 호출방법&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[C++ 전방 선언 (Forward Declaration)]]></title><description><![CDATA[전방 선언 (Forward Declaration) 식별자를 정의하기 전에 식별자의 존재를 컴파일러에게 미리 알리는 방식이다. 예를 들어보자. class A.h / class A.cpp 
+class B.h / class B.cpp…]]></description><link>https://ju3un.github.io/c++-forward-declaration/</link><guid isPermaLink="false">https://ju3un.github.io/c++-forward-declaration/</guid><pubDate>Thu, 24 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;전방 선언 (Forward Declaration)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;식별자를 정의하기 전에 식별자의 존재를 컴파일러에게 미리 알리는 방식이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;예를 들어보자.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;class A.h / class A.cpp&lt;br&gt;
+class B.h / class B.cpp&lt;br&gt;
+위와 같이 구성된 파일이 있다고 가정할 때, class B 작성 시 class A를 사용할 일이 있다면, &lt;br&gt;
+우리는 가장 일반적으로 class B.h 파일에 &lt;strong&gt;#include class A.h&lt;/strong&gt; 를 추가하는 방법을 쉽게 떠올릴 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;그러나 이러한 방식은 컴파일 시간을 증가시키는 요인이 된다.&lt;br&gt;
+C++에서는 하나의 헤더 파일이 변경되어도 include한 파일들이 모두 재컴파일되기 때문이다.&lt;/p&gt;
+&lt;p&gt;따라서 &lt;strong&gt;전방 선언은 헤더 포함 의존성을 최소화하기 위해 도입된 방식이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;1. 전방 선언 (Forward Declaration) 예제&lt;/h2&gt;
+&lt;p&gt;전방 선언은 클래스 정의 시에 멤버 변수나 함수를 떠올리면 쉽게 와닿을 것이다.&lt;br&gt;
+예를 들어보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;
+      &lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Mother.h&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Mother&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// ..&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;
+      &lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Family.h&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Forward Declaration&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Mother&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Family&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;Family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;Family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Mother&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; p_pMother&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;Family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Mother&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; p_pMother&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   
+&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+  Mother&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; m_pMainFamily &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;nullptr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;이와 같이 헤더 파일에서 Family 클래스 작성 시 Mother 클래스 명만 사용하는 경우를 종종 볼 수 있다.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;이처럼 특정 클래스 이름만 필요로 할 경우에는 전방 선언만으로도&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;헤더 포함 의존성을 회피할 수 있고&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;해당 헤더의 불필요한 정보들이 노출되지 않는다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;단, 반드시 주의해야 하는 것은 전방 선언을 사용할 경우, 그 클래스 관련 객체는 포인터형으로 선언해야 한다.&lt;/strong&gt;&lt;br&gt;
+만약, 포인터형이 아닌 객체를 생성할 경우, &lt;strong&gt;해당 객체 할당 크기를 정확히 파악할 수 없기 때문이다.&lt;/strong&gt;&lt;br&gt;
+(포인터형으로 선언시에는 4바이트(in 32bit OS)를 할당할 수 있다.)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;cf. 매개 변수 / 리턴 타입을 위한 전방 선언 (Forward Declaration)&lt;/h3&gt;
+&lt;p&gt;단, 메서드(함수)의 매개변수나 리턴 타입으로 이름만 사용될 경우에는 포인터형이 아닌 객체를 사용할 수 있다.&lt;br&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;
+      &lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Family.h&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Forward Declaration&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Mother&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Family&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+  Mother &lt;span class=&quot;token function&quot;&gt;GetMainFamily&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;SetMainFamily&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Mother p_Mother&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;함수 Body와 그 함수를 호출하는 코드에서만 클래스의 크기를 요구하기 때문에 이런 경우에는 포인터 형이 아니어도 된다.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://egloos.zum.com/sweeper/v/2827565&quot;&gt;[C++] 전방 선언 (Foward Declaration)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[인코딩(Encoding) - ASCII, ANSI, Multi-Byte, Unicode 등 - (1)]]></title><description><![CDATA[1. 아스키(ASCII) 코드 (American Standart Code for Information Interchage)의 약자 컴퓨터는 숫자(0과…]]></description><link>https://ju3un.github.io/encodng-unicode-ansi/</link><guid isPermaLink="false">https://ju3un.github.io/encodng-unicode-ansi/</guid><pubDate>Tue, 22 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;1. 아스키(ASCII) 코드&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;(American Standart Code for Information Interchage)의 약자&lt;/li&gt;
@@ -759,7 +833,7 @@ $ git add example.txt&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&apos;관리자 권한으로 실행&apos;으로 cmd를 실행 후 직접 명령어를 사용하여 설치한다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;얼핏 보기에 1번이 편해보일 수 있어도 2번을 추천한다.
+&lt;p&gt;얼핏 보기에 1번이 한번 설정해놓으면 되니까 편해보일 수 있어도, 2번을 추천한다.
 1번 방법으로 실행해도 중간에 오류가 나는 경우가 종종 있기 때문이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
