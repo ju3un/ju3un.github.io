@@ -1,4 +1,132 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 25 Mar 2019 14:27:12 GMT</lastBuildDate><item><title><![CDATA[C++ 연산자 오버로딩(Operator Overloading)]]></title><description><![CDATA[연산자 오버로딩(Operator Overloading) C…]]></description><link>https://ju3un.github.io/operator-overloading/</link><guid isPermaLink="false">https://ju3un.github.io/operator-overloading/</guid><pubDate>Mon, 25 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;연산자 오버로딩(Operator Overloading)&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 15 Apr 2019 14:51:20 GMT</lastBuildDate><item><title><![CDATA[C++ 형 변환(Type Casting)]]></title><description><![CDATA[먼저 가장 기본적으로 형 변환은  묵시적 형 변환(Implicit Cast), 명시적 형 변환(Explicit Cast)  두 가지로 구분할 수 있다. 이 포스팅에서는 명시적 형 변환 위와 같은 (new _ type) 연산자 이외의 
+ static…]]></description><link>https://ju3un.github.io/c++-type-casting/</link><guid isPermaLink="false">https://ju3un.github.io/c++-type-casting/</guid><pubDate>Mon, 15 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;먼저 가장 기본적으로 형 변환은 &lt;strong&gt;묵시적 형 변환(Implicit Cast), 명시적 형 변환(Explicit Cast)&lt;/strong&gt; 두 가지로 구분할 수 있다.&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;
+      &lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; ch1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;       &lt;span class=&quot;token comment&quot;&gt;// 묵시적 형 변환(Implicit Cast)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; ch2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 명시적 형 변환(Explicit Cast)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이 포스팅에서는 명시적 형 변환 위와 같은 (new_type) 연산자 이외의&lt;br&gt;
+&lt;strong&gt;static_cast, reinterpret_cast, const_cast, dynamic_cast 연산자&lt;/strong&gt;에 대해 정리하려고 한다.&lt;/p&gt;
+&lt;h4&gt;4가지 연산자의 형식은 ***_cast&amp;#x3C;new_type&gt;(expression) 와 같다.&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h2&gt;1. static_cast&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;가장 보편적으로 사용되는, 논리적으로 변환 가능한 타입을 변환하는 연산자&lt;/li&gt;
+&lt;li&gt;컴파일(Compile) 시점에 발생&lt;/li&gt;
+&lt;li&gt;묵시적 형 변환(Implicit Cast)과 같은 맥락&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Q. 묵시적 형 변환은 문법적인 키워드가 존재하지 않는데, static_cast이 묵시적 형 변환과 같은 의미라니?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;컴파일러가 값을 변환하기 위해 기계어 코드를 만들어 내는 컴파일 시점에 형 변환이 일어나는 시점&lt;/strong&gt; 에서 같은 맥락&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Q. 그렇다면 static_cast(정적 캐스팅)과 묵시적 형 변환과의 차이는?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&quot;상속 관계에 있는 포인터끼리 변환이 가능하다&quot;&lt;/strong&gt;는 점이다.&lt;br&gt;
+그러나, 다운캐스트(Downcast)의 경우 Unsafe 하다. &lt;strong&gt;(Unsafe Downcasting)&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;cf. new_type으로 void* 형이 올 수 있지만 return 값이 없다.&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h2&gt;2. reinterpret_cast&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;임의의 포인터끼리 변환 허용 &lt;strong&gt;(연관성이 없는 포인터 타입의 형 변환 가능)&lt;/strong&gt; (static_cast와의 차이점)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;강제 형 변환&lt;/strong&gt;으로 문법적으로 변환을 허용하는 것이지, 논리적으로 안전한 타입 연산자는 아님&lt;/li&gt;
+&lt;li&gt;expression에 해당하는 것을 new_type으로 비트 단위로 강제 형 변환&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ex) 주로 &lt;strong&gt;정수형 -&gt; 포인터&lt;/strong&gt; 또는 &lt;strong&gt;포인터 -&gt; 정수형&lt;/strong&gt; 변환하는 작업에 주로 사용함&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;
+      &lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; nCount&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; pCount&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+nCount &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;reinterpret_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;pCount&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;3. const_cast&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;포인터 타입, 참조형&lt;/strong&gt;에 대해서만 사용되며 &lt;strong&gt;동일한 타입에 대해서만 허용함&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;const 속성&lt;/strong&gt;이나 &lt;strong&gt;volatile 속성&lt;/strong&gt;을 잠깐 제거할 때 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;
+      &lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt; str&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; ptr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; str&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ptr&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    c&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;M&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;4. dynamic_cast&lt;/h2&gt;
+&lt;h3&gt;RTTI(Runtime Type Information)&lt;/h3&gt;
+&lt;p&gt;C++ 컴파일러 내에 포함되어 있는 기능으로, &lt;strong&gt;객체의 유형을 실행 시에 결정할 수 있도록 허용하는 것&lt;/strong&gt;을 의미한다.&lt;br&gt;
+다른 말로는 &lt;strong&gt;실행 중에 타입의 정보를 가지고 온다&lt;/strong&gt;는 의미로 표현할 수도 있다.&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;메모리 상주 객체에 유형 정보를 추가하여, 실행 시스템은 객체의 캐스트(=형 변환)가 유효한 지 여부를 확실히 하기 위해 특정 객체의 유형을 결정할 수 있다.&lt;br&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;RTTI는 객체를 동적으로 변화시킬 수 있는 &lt;strong&gt;Polymorphism&lt;/strong&gt; 능력이라고 이해하면 된다.&lt;/h4&gt;
+&lt;p&gt;타입 캐스팅에서 이 용어를 다룬 이유는, 바로 &lt;strong&gt;dynamic_cast 연산자가 이 요소 중 하나&lt;/strong&gt;이기 때문이다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;주로 &lt;strong&gt;Safe Downcasting&lt;/strong&gt;으로 사용되는 연산자 (부모 클래스 포인터에서 -&gt; 자식 클래스 포인터로 다운캐스팅)&lt;/li&gt;
+&lt;li&gt;다른 캐스트와 달리 &lt;strong&gt;런타임 시간에 다운 캐스팅이 가능한지 능동적으로 판단&lt;/strong&gt;하기 때문에 런타임 비용이 높음.&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;형 변환 성공 시 : 변환된 값 return&lt;/h4&gt;
+&lt;h4&gt;형 변환 실패 시 : 널 포인터(null pointer) 또는 예외(Exception) return&lt;/h4&gt;
+&lt;p&gt;최근에 나도 코딩하면서 dynamic_cast 연산자의 필요성을 느끼게 되었는데 예제를 통해 확인해보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;
+      &lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Blog&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;Blog&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Blog&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;protected&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;virtual&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Show&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;GitPage&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; Blog
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;GitPage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;GitPage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; override&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;GetPostCount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+praivate&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; m_nPostCount &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;protected&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Speak&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; override&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/// .cpp 파일은 생략해도 예제에는 문제가 없을 것으로 보아 생략한다.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    Blog&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; pBlog &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Blog&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    GitPage&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; pGitPage &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;dynamic_cast&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;GitPage&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pBlog&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pGitPage &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;nullptr&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
+        pGitPage&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Show&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;hr&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blockdmask.tistory.com/236&quot;&gt;C++ 타입캐스트 연산자&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://javawoo.tistory.com/40&quot;&gt;C++ type casting 정리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[C++ 연산자 오버로딩(Operator Overloading)]]></title><description><![CDATA[연산자 오버로딩(Operator Overloading) C…]]></description><link>https://ju3un.github.io/operator-overloading/</link><guid isPermaLink="false">https://ju3un.github.io/operator-overloading/</guid><pubDate>Mon, 25 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;연산자 오버로딩(Operator Overloading)&lt;/h2&gt;
 &lt;p&gt;C++의 특징으로 &lt;strong&gt;기존에 제공하고 있는 연산자를 재정의하여 사용자 정의 클래스로 사용하는 것을 의미&lt;/strong&gt;한다.&lt;br&gt;
 &lt;strong&gt;아래와 같은 연산자를 제외한 모든 연산자를 사용하여 전역 함수 또는 클래스로 재정의가 가능하다.&lt;/strong&gt;&lt;br&gt;
 &lt;br&gt;
