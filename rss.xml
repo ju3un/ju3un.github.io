@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 15 Apr 2019 14:51:20 GMT</lastBuildDate><item><title><![CDATA[C++ 형 변환(Type Casting)]]></title><description><![CDATA[먼저 가장 기본적으로 형 변환은  묵시적 형 변환(Implicit Cast), 명시적 형 변환(Explicit Cast)  두 가지로 구분할 수 있다. 이 포스팅에서는 명시적 형 변환 위와 같은 (new _ type) 연산자 이외의 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[JUVORITES]]></title><description><![CDATA[Ju3un's blog]]></description><link>https://ju3un.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 15 Apr 2019 15:29:25 GMT</lastBuildDate><item><title><![CDATA[C++ 형 변환(Type Casting)]]></title><description><![CDATA[먼저 가장 기본적으로 형 변환은  묵시적 형 변환(Implicit Cast), 명시적 형 변환(Explicit Cast)  두 가지로 구분할 수 있다. 이 포스팅에서는 명시적 형 변환 위와 같은 (new _ type) 연산자 이외의 
  static…]]></description><link>https://ju3un.github.io/c++-type-casting/</link><guid isPermaLink="false">https://ju3un.github.io/c++-type-casting/</guid><pubDate>Mon, 15 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;먼저 가장 기본적으로 형 변환은 &lt;strong&gt;묵시적 형 변환(Implicit Cast), 명시적 형 변환(Explicit Cast)&lt;/strong&gt; 두 가지로 구분할 수 있다.&lt;br&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;
@@ -19,7 +19,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Q. 묵시적 형 변환은 문법적인 키워드가 존재하지 않는데, static_cast이 묵시적 형 변환과 같은 의미라니?&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;컴파일러가 값을 변환하기 위해 기계어 코드를 만들어 내는 컴파일 시점에 형 변환이 일어나는 시점&lt;/strong&gt; 에서 같은 맥락&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;컴파일러가 값을 변환하기 위해 기계어 코드를 만들어 내는 컴파일 시점에 형 변환이 일어나는 관점&lt;/strong&gt; 에서 같은 맥락&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Q. 그렇다면 static_cast(정적 캐스팅)과 묵시적 형 변환과의 차이는?&lt;/p&gt;
 &lt;blockquote&gt;
@@ -102,7 +102,7 @@ praivate&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; m_nPostCount &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;protected&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Speak&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; override&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Show&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; override&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;token comment&quot;&gt;/// .cpp 파일은 생략해도 예제에는 문제가 없을 것으로 보아 생략한다.&lt;/span&gt;
