@@ -118,7 +118,6 @@ public:
     Blog();
     ~Blog();
 
-protected:
     virtual void Show();
 };
 
@@ -129,13 +128,11 @@ public:
     GitPage();
     ~GitPage() override;
 
-    int GetPostCount();
-
-praivate:
-    int m_nPostCount = 0;
-
-protected:
     void Show() override;
+    std::string GetGitAccount();
+    
+private:
+    std::string m_sGitAccount;
 };
 
 /// .cpp 파일은 생략해도 예제에는 문제가 없을 것으로 보아 생략한다.
