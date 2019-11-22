@@ -81,6 +81,13 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-feed`
+    },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: config.googleAdsensePublisherId,
+        head: true,
+      },
     }
   ],
 };

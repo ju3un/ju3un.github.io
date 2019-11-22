@@ -22,6 +22,7 @@ let config = {
 if (process.env.NODE_ENV === 'development') {
   config.googleAnalyticsTrackingId = 'UA-131751338-1';
   config.disqusShortname = 'ju3un';
+  config.googleAdsensePublisherId = 'ca-pub-2439367689968740';
 }
 
 module.exports = config;
