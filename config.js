@@ -15,6 +15,7 @@ let config = {
   // addtional
   googleAnalyticsTrackingId: 'UA-131751338-1',
   disqusShortname: 'ju3un',
+  googleAdsensePublisherId: 'ca-pub-2439367689968740'
 };
 
 /********************************************** */
