@@ -15,7 +15,7 @@ let config = {
   // addtional
   googleAnalyticsTrackingId: 'UA-131751338-1',
   disqusShortname: 'ju3un',
-  googleAdClientId: 'ca-pub-2439367689968740',
+  googleAdClientId: 'ca-pub-2439367689968740', 
 };
 
 /********************************************** */
