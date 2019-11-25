@@ -15,7 +15,7 @@ let config = {
   // addtional
   googleAnalyticsTrackingId: 'UA-131751338-1',
   disqusShortname: 'ju3un',
-  googleAdsensePublisherId: 'ca-pub-2439367689968740'
+  googleAdClientId: 'ca-pub-2439367689968740',
 };
 
 /********************************************** */
@@ -23,7 +23,7 @@ let config = {
 if (process.env.NODE_ENV === 'development') {
   config.googleAnalyticsTrackingId = 'UA-131751338-1';
   config.disqusShortname = 'ju3un';
-  config.googleAdsensePublisherId = 'ca-pub-2439367689968740';
+  config.googleAdClientId = 'ca-pub-2439367689968740';
 }
 
 module.exports = config;

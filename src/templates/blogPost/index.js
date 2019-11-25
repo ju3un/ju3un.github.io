@@ -14,6 +14,7 @@ import _ from 'lodash';
 import './index.scss';
 import Layout from '../../components/layout';
 import config from '../../../config';
+import AdSense from 'react-adsense'
 
 class BlogTemplate extends React.Component {
   componentDidMount() {
@@ -107,6 +108,13 @@ class BlogTemplate extends React.Component {
             )}
           </div>
         </div>
+        {<div className="ad">
+          <AdSense.Google
+            client={config.googleAdClientId}
+            format="auto"
+            responsive="true"
+          />
+        </div>}
         {config.disqusShortname ? (
           <div className="comments">
             <DiscussionEmbed
