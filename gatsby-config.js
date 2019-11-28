@@ -86,6 +86,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-adsense`,
       options: {
         adClientId: config.googleAdClientId,
+        adSlot: config.googleAdSlot,
       },
     }
   ],
