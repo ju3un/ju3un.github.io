@@ -95,6 +95,10 @@ const Layout = ({ children, data, location }) => (
               `}
             </script>
             <script
+              async
+              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`}
+            />
+            <script
                 context={`http://schema.org`}
                 type="Person"
                 name="JUVORITES"
@@ -102,7 +106,6 @@ const Layout = ({ children, data, location }) => (
                 sameAs= {
                   'https://www.instagram.com/ju3un'}
             />
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           </Helmet>
 
           <div id="wrap">
