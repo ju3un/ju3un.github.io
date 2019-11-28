@@ -15,8 +15,7 @@ let config = {
   // addtional
   googleAnalyticsTrackingId: 'UA-131751338-1',
   disqusShortname: 'ju3un',
-  googleAdClientId: 'ca-pub-2439367689968740', 
-  googleAdSlot: '3315359073',
+  googleAdClientId: 'ca-pub-2439367689968740',
 };
 
 /********************************************** */
@@ -25,7 +24,6 @@ if (process.env.NODE_ENV === 'development') {
   config.googleAnalyticsTrackingId = 'UA-131751338-1';
   config.disqusShortname = 'ju3un';
   config.googleAdClientId = 'ca-pub-2439367689968740';
-  config.googleAdSlot = '3315359073';
 }
 
 module.exports = config;
