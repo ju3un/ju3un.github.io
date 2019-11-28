@@ -111,6 +111,8 @@ class BlogTemplate extends React.Component {
         {<div className="ad">
           <AdSense.Google
             client={config.googleAdClientId}
+            slot={config.googleAdSlot}
+            style={{ display: 'block' }}
             format="auto"
             responsive="true"
           />
