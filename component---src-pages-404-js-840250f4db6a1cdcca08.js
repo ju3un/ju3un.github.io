@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{w2l6:function(n,c,e){"use strict";e.r(c);var t=e("nKUr"),r=(e("q1tI"),e("I/Ru"));c.default=function(){return Object(t.jsxs)(r.a,{children:[Object(t.jsx)("h1",{children:"NOT FOUND"}),Object(t.jsx)("p",{children:"블로그 공사중으로 기존 포스트가 아직 업데이트되지 않았을 수 있습니다."}),Object(t.jsx)("p",{children:"빠른 시일 내에 업데이트를 완료하겠습니다."})]})}}}]);
+//# sourceMappingURL=component---src-pages-404-js-840250f4db6a1cdcca08.js.map
